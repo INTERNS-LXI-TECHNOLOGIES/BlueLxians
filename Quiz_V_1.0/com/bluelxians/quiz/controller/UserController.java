@@ -8,6 +8,7 @@ public class UserController
 {
 	public void quizChoice(int quizChoice)
 	{
-		
+		UserView userV=new UserView();
+		userV.logedUser();
 	}
 }
