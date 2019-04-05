@@ -21,6 +21,8 @@ public class ManagerView
 			case 1:
 					System.out.println("Quiz");
 					Quiz quiz=new Quiz();
+					System.out.println("Type:");
+					quiz.setType(scan.next());
 					System.out.println("Question:");
 					quiz.setQuestion(scan.next());
 					System.out.println("Option a:");

@@ -32,7 +32,7 @@ public class AdministrationController
 	   {
 			if(password.equals("user"))
 			{
-				userC.logedUser();
+				userC.quizChoice();
 			}
 			else
 			{
