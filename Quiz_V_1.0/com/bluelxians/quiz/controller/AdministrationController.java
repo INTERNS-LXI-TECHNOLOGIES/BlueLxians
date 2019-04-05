@@ -7,7 +7,9 @@ public class AdministrationController
 {
 	AdministrationView administrationV=new 	AdministrationView();
 	ManagerController managerC=new ManagerController();
+
 	UserController userC=new UserController();
+
 	
 	public void loginValidation(String userName,String password)
 	{
@@ -16,7 +18,9 @@ public class AdministrationController
 	   {
 		   if(password.equals("manager"))
 		   {
+
 			   managerC.managerOptions();
+
 		   }
 		   else
 		   {
