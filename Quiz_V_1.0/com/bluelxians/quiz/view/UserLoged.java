@@ -16,8 +16,8 @@ public class UserLoged
 		System.out.print("1.Java \n"+"2.C Programe \n"+"3.CPP");
 		System.out.print("Select a choice");
 		quizChoice=scan.nextInt();
-		QuizSegment segment = new QuizSegment();
-		segment.quizChoice(quizChoice);
+		UserController userC = new QuizSegment();
+		userC.quizChoice(quizChoice);
 
 	}
 }

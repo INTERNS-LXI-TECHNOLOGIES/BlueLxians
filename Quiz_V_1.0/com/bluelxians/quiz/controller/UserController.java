@@ -4,7 +4,7 @@ package com.bluelxians.quiz.controller;
 */
 import java.util.*;
 
-public class QuizSegment
+public class UserController
 {
 	public void quizChoice(int quizChoice)
 	{
