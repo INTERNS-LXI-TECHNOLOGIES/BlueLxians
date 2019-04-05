@@ -6,11 +6,15 @@ import com.bluelxians.quiz.view.ManagerView;
 public class ManagerController
 {
 	ManagerView managerV;
-	QuizProgramController quizProgramC;
-	public void quiz()
+	public void addQuiz(ArrayList <Quiz> quizes,Quiz quiz)
 	{
-	quizProgramC=new QuizProgramController();
-	quizProgramC.quizView();
+		quizes.add(quiz);
+	}
+	public void deleteQuiz()
+	{
+	}
+	public void updateQuiz()
+	{
 	}
 	public void managerOptions()
 	{

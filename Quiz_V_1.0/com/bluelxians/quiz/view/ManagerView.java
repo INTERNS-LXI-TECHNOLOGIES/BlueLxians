@@ -1,6 +1,5 @@
 package com.bluelxians.quiz.view;
 import com.bluelxians.quiz.controller.ManagerController;
-import com.bluelxians.quiz.controller.QuizProgramController;
 /**
 *@author Pavana N P
 **/
@@ -18,14 +17,28 @@ public class ManagerView
 		switch(scan.nextInt())
 		{
 			case 1:
-			managerC.quiz();
+					System.out.println("Quiz");
+					Quiz quiz=new Quiz();
+					System.out.println("Question:");
+					quiz.setQuestion(scan.next());
+					System.out.println("Option a:");
+					quiz.setOptionA(scan.next());
+					System.out.println("Option b:");
+					quiz.setOptionB(scan.next());
+					System.out.println("Option c:");
+					quiz.setOptionC(scan.next());
+					System.out.println("Option d:");
+					quiz.setOptionD(scan.next());
+					System.out.println("Answer:");
+					quiz.setAnswer(scan.next());
+					managerC.addQuiz(quizes,quiz);
 			break;
 			case 2:
-			managerC.quiz();
+	
+				
 			break;
 			case 3:
-			managerC.quiz();
-			break;
+					
 			default:System.out.println("Wrong choice");
 			break;
 		}
