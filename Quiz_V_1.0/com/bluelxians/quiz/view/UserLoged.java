@@ -17,8 +17,6 @@ public class UserView
 		System.out.print("1.Java \n"+"2.C Programme \n"+"3.CPP");
 		System.out.print("Select a choice");
 		quizChoice=scan.nextInt();
-		UserController userC = new QuizSegment();
-		userC.quizChoice(quizChoice);
-
+		
 	}
 }
