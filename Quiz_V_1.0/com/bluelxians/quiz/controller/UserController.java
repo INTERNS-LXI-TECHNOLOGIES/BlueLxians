@@ -6,7 +6,7 @@ import java.util.*;
 
 public class UserController
 {
-	public void quizChoice(int quizChoice)
+	public void quizChoice()
 	{
 		UserView userV=new UserView();
 		userV.logedUser();
