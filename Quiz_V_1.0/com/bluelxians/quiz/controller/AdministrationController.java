@@ -1,5 +1,7 @@
 package com.bluelxians.quiz.controller;
 import com.bluelxians.quiz.view.*;
+import com.bluelxians.quiz.model.Quiz;
+import java.util.ArrayList;
 /*
 *@ AUTHOR greeshma
 */
@@ -7,7 +9,9 @@ public class AdministrationController
 {
 	AdministrationView administrationV=new 	AdministrationView();
 	ManagerController managerC=new ManagerController();
-	
+
+	UserController userC=new UserController();
+    ArrayList<Quiz> quiz=new ArrayList<Quiz> ();
 	public void loginValidation(String userName,String password)
 	{
 	
@@ -15,7 +19,9 @@ public class AdministrationController
 	   {
 		   if(password.equals("manager"))
 		   {
-			  managerC.managerOptions(); 
+
+			   managerC.managerOptions();
+
 		   }
 		   else
 		   {
@@ -26,7 +32,7 @@ public class AdministrationController
 	   {
 			if(password.equals("user"))
 			{
-				
+				userC.logedUser();
 			}
 			else
 			{
