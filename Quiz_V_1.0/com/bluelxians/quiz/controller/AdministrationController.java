@@ -11,7 +11,7 @@ public class AdministrationController
 	ManagerController managerC=new ManagerController();
 
 	UserController userC=new UserController();
-    ArrayList<Quiz> quiz=new ArrayList<Quiz> ();
+    ArrayList <Quiz> quizes=new ArrayList <Quiz> ();
 	public void loginValidation(String userName,String password)
 	{
 	
@@ -20,7 +20,7 @@ public class AdministrationController
 		   if(password.equals("manager"))
 		   {
 
-			   managerC.managerOptions();
+			   managerC.managerOptions(quizes);
 
 		   }
 		   else

@@ -1,5 +1,7 @@
 package com.bluelxians.quiz.view;
 import com.bluelxians.quiz.controller.ManagerController;
+import com.bluelxians.quiz.model.Quiz;
+import java.util.ArrayList;
 /**
 *@author Pavana N P
 **/
@@ -8,7 +10,7 @@ public class ManagerView
 {
 	Scanner scan=new Scanner(System.in);
 	ManagerController managerC;
-	public void managerOperations()
+	public void managerOperations(ArrayList <Quiz> quizes)
 	{
 		managerC=new ManagerController();
 		do
