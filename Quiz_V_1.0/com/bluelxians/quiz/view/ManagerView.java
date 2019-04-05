@@ -14,7 +14,7 @@ public class ManagerView
 		managerC=new ManagerController();
 		do
 		{
-		System.out.println("Operation\n1.Add\n2.Delete\n3.Update");
+		System.out.println("Operations\n1.Add\n2.Delete\n3.Update");
 		switch(scan.nextInt())
 		{
 			case 1:

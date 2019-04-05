@@ -6,7 +6,7 @@ import com.bluelxians.quiz.view.*;
 public class AdministrationController
 {
 	AdministrationView administrationV=new 	AdministrationView();
-	
+	ManagerController managerC=new ManagerController();
 	
 	public void loginValidation(String userName,String password)
 	{
@@ -15,7 +15,7 @@ public class AdministrationController
 	   {
 		   if(password.equals("manager"))
 		   {
-			   
+			  managerC.managerOptions(); 
 		   }
 		   else
 		   {
