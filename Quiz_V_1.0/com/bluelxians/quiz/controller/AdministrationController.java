@@ -2,21 +2,26 @@ package com.bluelxians.quiz.controller;
 import com.bluelxians.quiz.view.*;
 import com.bluelxians.quiz.model.Quiz;
 import java.util.ArrayList;
-/*
-*@ AUTHOR greeshma
-*/
+import java.io.*;
+import java.util.*;
+/**
+*@author greeshma
+**/
 public class AdministrationController
 {
 	AdministrationView administrationV=new 	AdministrationView();
 	ManagerController managerC=new ManagerController();
 	UserController userC=new UserController();
     ArrayList <Quiz> quizes=new ArrayList <Quiz> ();
+	
 	public void loginValidation(String userName,String password)throws Exception
 	{
-	
-     if(userName.equals("manager"))
+	Properties properties=new Properties();
+	FileReader f = new FileReader("prop.properties");
+	properties.load(f);
+     if(userName.equals((properties.getProperty("managerUserName"))))
 	   {
-		   if(password.equals("manager"))
+		   if(password.equals((properties.getProperty("managerPassword"))))
 		   {
 
 			   managerC.managerOptions(quizes);
@@ -27,9 +32,9 @@ public class AdministrationController
 			   System.out.println("Password incorrect");
 		   }
 	   }
-	 else if(userName.equals("user"))
+	 else if(userName.equals(properties.getProperty("userName")))
 	   {
-			if(password.equals("user"))
+			if(password.equals(properties.getProperty("password")))
 			{
 				userC.quizChoice();
 			}
