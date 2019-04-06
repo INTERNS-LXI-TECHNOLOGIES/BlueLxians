@@ -13,8 +13,19 @@ public class ManagerController
 	{
 		quizes.add(quiz);
 	}
-	public void deleteQuiz()
+	public void deleteQuiz(String sess,String quesNo,ArrayList <Quiz> quizes)
 	{
+		for(int i=0;i<quizes.size();i++)
+		{
+			if(sess.equals(quizes.get(i).getSession()))
+			{
+				if(quesNo.equals(i+1))
+				{
+				quizes.remove(i);
+				}
+			}
+		}
+		
 	}
 	public void updateQuiz()
 	{
@@ -22,7 +33,7 @@ public class ManagerController
 	public void storeInFile(ArrayList <Quiz> quizes)throws Exception
 	{
 		File file=new File("quiz.csv");
-		FileWriter fw=new FileWriter(file);
+		FileWriter fw=new FileWriter(file,true);
 		BufferedWriter bw=new BufferedWriter(fw);
 		for(int i=0;i<quizes.size();i++)
 					{
@@ -51,6 +62,7 @@ public class ManagerController
 				quiz.setAnswer(item[k+6]);
 				quizes.add(quiz);
 				}
+				br.close();
 				for(int i=0;i<quizes.size();i++)
 					{
 						System.out.println(quizes.get(i).getSession()+","+quizes.get(i).getQuestion()+","+quizes.get(i).getOptionA()+","+quizes.get(i).getOptionB()+","+quizes.get(i).getOptionC()+","+quizes.get(i).getOptionD()+","+quizes.get(i).getAnswer());
