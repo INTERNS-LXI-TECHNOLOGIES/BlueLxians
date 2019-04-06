@@ -1,4 +1,3 @@
-
 package com.bluelxians.quiz.view;
 import com.bluelxians.quiz.controller.*;
 import java.util.*;
