@@ -1,6 +1,7 @@
 package com.bluelxians.quiz.view;
 import com.bluelxians.quiz.controller.ManagerController;
-import com.bluelxians.quiz.controller.QuizProgramController;
+import com.bluelxians.quiz.model.Quiz;
+import java.util.ArrayList;
 /**
 *@author Pavana N P
 **/
@@ -9,7 +10,7 @@ public class ManagerView
 {
 	Scanner scan=new Scanner(System.in);
 	ManagerController managerC;
-	public void managerOperations()
+	public void managerOperations(ArrayList <Quiz> quizes)throws Exception
 	{
 		managerC=new ManagerController();
 		do
@@ -18,14 +19,38 @@ public class ManagerView
 		switch(scan.nextInt())
 		{
 			case 1:
-			managerC.quiz();
+					System.out.println("Quiz");
+					Quiz quiz=new Quiz();
+					System.out.print("Session:");
+					quiz.setSession(scan.next());
+					System.out.print("Question:");
+					quiz.setQuestion(scan.next());
+					System.out.print("Option a:");
+					quiz.setOptionA(scan.next());
+					System.out.print("Option b:");
+					quiz.setOptionB(scan.next());
+					System.out.print("Option c:");
+					quiz.setOptionC(scan.next());
+					System.out.print("Option d:");
+					quiz.setOptionD(scan.next());
+					System.out.print("Answer:");
+					quiz.setAnswer(scan.next());
+					managerC.addQuiz(quizes,quiz);
+					managerC.storeInFile(quizes);
+					quizes.clear();
+					managerC.readFromFile(quizes);
+					//System.out.println(quizes.get(0).getType());
+					/*for(int i=0;i<quizes.size();i++)
+					{
+						System.out.println(quizes.get(i).getSession()+","+quizes.get(i).getQuestion()+","+quizes.get(i).getOptionA()+","+quizes.get(i).getOptionB()+","+quizes.get(i).getOptionC()+","+quizes.get(i).getOptionD()+","+quizes.get(i).getAnswer());
+					}*/
 			break;
 			case 2:
-			managerC.quiz();
+	
+				
 			break;
 			case 3:
-			managerC.quiz();
-			break;
+					
 			default:System.out.println("Wrong choice");
 			break;
 		}

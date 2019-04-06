@@ -9,10 +9,9 @@ public class AdministrationController
 {
 	AdministrationView administrationV=new 	AdministrationView();
 	ManagerController managerC=new ManagerController();
-
 	UserController userC=new UserController();
-    ArrayList<Quiz> quiz=new ArrayList<Quiz> ();
-	public void loginValidation(String userName,String password)
+    ArrayList <Quiz> quizes=new ArrayList <Quiz> ();
+	public void loginValidation(String userName,String password)throws Exception
 	{
 	
      if(userName.equals("manager"))
@@ -20,7 +19,7 @@ public class AdministrationController
 		   if(password.equals("manager"))
 		   {
 
-			   managerC.managerOptions();
+			   managerC.managerOptions(quizes);
 
 		   }
 		   else
