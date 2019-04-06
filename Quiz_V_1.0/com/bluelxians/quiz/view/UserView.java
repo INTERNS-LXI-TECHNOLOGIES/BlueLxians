@@ -1,4 +1,3 @@
-
 package com.bluelxians.quiz.view;
 /*
 @Sarath Kumar S
