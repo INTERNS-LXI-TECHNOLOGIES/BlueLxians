@@ -5,20 +5,20 @@ package com.bluelxians.quiz.model;
 public class Quiz
 {
    
-    private String type;
+    private String session;
     private String question;
     private String optionA;
     private String optionB;	
 	private String optionC;	
 	private String optionD;	
     private String answer;
-	public void setType(String Type)
+	public void setSession(String session)
 	{
-		this.type=type;
+		this.session=session;
 	}
-	public String getType()
+	public String getSession()
 	{
-		return type;
+		return session;
 	}
 	public void setQuestion(String question)
     {
