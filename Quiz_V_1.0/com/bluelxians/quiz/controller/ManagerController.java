@@ -41,9 +41,39 @@ public class ManagerController
 			}
 		}
 	}
-	public void storeInFile(ArrayList <Quiz> quizes)throws Exception
+	public void storeInJavaFile(ArrayList <Quiz> quizes)throws Exception
 	{
 		File file=new File("javaquiz.csv");
+		storeInFile(quizes,file);
+	}
+	public void readFromJavaFile(ArrayList <Quiz> quizes)throws Exception
+	{
+			File file=new File("javaquiz.csv");
+			readFromFile(quizes,file);
+	}
+	public void storeInCFile(ArrayList <Quiz> quizes)throws Exception
+	{
+		File file=new File("cquiz.csv");
+		storeInFile(quizes,file);
+	}
+	public void readFromCFile(ArrayList <Quiz> quizes)throws Exception
+	{
+			File file=new File("cquiz.csv");
+			readFromFile(quizes,file);
+	}
+	public void storeInCppFile(ArrayList <Quiz> quizes)throws Exception
+	{
+		File file=new File("cppquiz.csv");
+		storeInFile(quizes,file);
+	}
+	public void readFromCppFile(ArrayList <Quiz> quizes)throws Exception
+	{
+			File file=new File("cppquiz.csv");
+			readFromFile(quizes,file);
+	}
+
+	public void storeInFile(ArrayList <Quiz> quizes,File file)throws Exception
+	{
 		FileWriter fw=new FileWriter(file);
 		BufferedWriter bw=new BufferedWriter(fw);
 		for(int i=0;i<quizes.size();i++)
@@ -52,17 +82,15 @@ public class ManagerController
 					}
 					bw.close();
 	}
-	public void readFromFile(ArrayList <Quiz> quizes)throws Exception
+	public void readFromFile(ArrayList <Quiz> quizes,File file)throws Exception
 	{
-
-		File file=new File("javaquiz.csv");
 		FileWriter fw=new FileWriter(file,true);
 		FileReader fr=new FileReader(file);
 		BufferedReader br=new BufferedReader(fr);
-				int k=0;	
-				String data;	
-				while((data=br.readLine())!=null)
-				{
+		int k=0;	
+		String data;	
+		while((data=br.readLine())!=null)
+			{
 				Quiz quiz=new Quiz();
 				String item[]=data.split(",");
 				quiz.setQuestion(item[k]);
@@ -72,12 +100,8 @@ public class ManagerController
 				quiz.setOptionD(item[k+4]);
 				quiz.setAnswer(item[k+5]);
 				quizes.add(quiz);
-				}
-				br.close();
-				for(int i=0;i<quizes.size();i++)
-					{
-						System.out.println((i+1)+"."+quizes.get(i).getQuestion()+"?\na."+quizes.get(i).getOptionA()+"\nb."+quizes.get(i).getOptionB()+"\nc."+quizes.get(i).getOptionC()+"\nd."+quizes.get(i).getOptionD()+"\nAns:"+quizes.get(i).getAnswer());
-					}
+			}
+		br.close();
 	}
 		
 	public void managerOptions(ArrayList <Quiz> quizes,Quiz quiz)throws Exception

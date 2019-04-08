@@ -27,12 +27,21 @@ public class ManagerView
 			{
 				case 1:
 					add(quizes,quiz);
+					managerC.storeInJavaFile(quizes);
+					quizes.clear();
+					managerC.readFromJavaFile(quizes);
 				break;
 				case 2:
 					add(quizes,quiz);
+					managerC.storeInCFile(quizes);
+					quizes.clear();
+					managerC.readFromCFile(quizes);
 				break;
 				case 3:
 					add(quizes,quiz);
+					managerC.storeInCppFile(quizes);
+					quizes.clear();
+					managerC.readFromCppFile(quizes);
 				break;
 				default:System.out.println("Wrong choice");
 				break;
@@ -43,13 +52,28 @@ public class ManagerView
 			switch(scan.nextInt())
 			{
 				case 1:
+					quizes.clear();
+					managerC.readFromJavaFile(quizes);
 					delete(quizes);
+					managerC.storeInJavaFile(quizes);
+					quizes.clear();
+					managerC.readFromJavaFile(quizes);
 				break;
 				case 2:
+					quizes.clear();
+					managerC.readFromCFile(quizes);
 					delete(quizes);
+					managerC.storeInCFile(quizes);
+					quizes.clear();
+					managerC.readFromCFile(quizes);
 				break;
 				case 3:
+					quizes.clear();
+					managerC.readFromCppFile(quizes);
 					delete(quizes);
+					managerC.storeInCppFile(quizes);
+					quizes.clear();
+					managerC.readFromCppFile(quizes);
 				break;
 				default:System.out.println("Wrong choice");
 				break;
@@ -60,13 +84,25 @@ public class ManagerView
 			switch(scan.nextInt())
 			{
 				case 1:
+					managerC.readFromJavaFile(quizes);
 					update(quizes);
+					managerC.storeInJavaFile(quizes);
+					quizes.clear();
+					managerC.readFromJavaFile(quizes);
 				break;
 				case 2:
+					managerC.readFromCFile(quizes);
 					update(quizes);
+					managerC.storeInCFile(quizes);
+					quizes.clear();
+					managerC.readFromCFile(quizes);
 				break;
 				case 3:
+					managerC.readFromCppFile(quizes);
 					update(quizes);
+					managerC.storeInCppFile(quizes);
+					quizes.clear();
+					managerC.readFromCppFile(quizes);	
 				break;
 				default:System.out.println("Wrong choice");
 				break;
@@ -100,46 +136,34 @@ public class ManagerView
 		managerC.addQuiz(quizes,quiz);
 		System.out.println("To add questions again press 1");
 		}while(scan.nextInt()==1);
-		managerC.storeInFile(quizes);
-		quizes.clear();
-		managerC.readFromFile(quizes);
 	}
 	public void delete(ArrayList <Quiz> quizes)throws Exception
 	{
-		quizes.clear();
 		do
 			{
-				managerC.readFromFile(quizes);
 				System.out.print("Which question you want to delete:");
 				String quesNo=scan.next();
 				managerC.deleteQuiz(quesNo,quizes);
 				System.out.println("To delete questions again press 1");
 			}while(scan.nextInt()==1);
-				managerC.storeInFile(quizes);
-				quizes.clear();
-				managerC.readFromFile(quizes);
 	}
 	public void update(ArrayList <Quiz> quizes)throws Exception
 	{
-			managerC.readFromFile(quizes);
 			System.out.print("which one you want to edit:");
 			String quesNo=scan.next();
 			System.out.println("To edit question  press 1");
-			while(scan.nextInt()==1){
-			System.out.print("Changed question:");
-			String q=br.readLine();
-			System.out.print("Changed options:");
-			String o1=scan.next();
-			String o2=scan.next();
-			String o3=scan.next();
-			String o4=scan.next();
-			System.out.print("Changed answer:");
-			String a=scan.next();
-			managerC.updateQuiz(quizes,quesNo,q,o1,o2,o3,o4,a);
+			while(scan.nextInt()==1)
+			{
+				System.out.print("Changed question:");
+				String q=br.readLine();
+				System.out.print("Changed options:");
+				String o1=scan.next();
+				String o2=scan.next();
+				String o3=scan.next();
+				String o4=scan.next();
+				System.out.print("Changed answer:");
+				String a=scan.next();
+				managerC.updateQuiz(quizes,quesNo,q,o1,o2,o3,o4,a);
 			}
-			managerC.storeInFile(quizes);
-			quizes.clear();
-			managerC.readFromFile(quizes);
-		
 	}		
 }
