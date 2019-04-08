@@ -41,8 +41,10 @@ public class ManagerController
 					}
 					bw.close();
 	}
-	public void readFromFile(ArrayList <Quiz> quizes)throws Exception
+	public void readFromFile(ArrayList <Quiz> quizes,String session)throws Exception
 	{
+
+
 		File file=new File("quiz.csv");
 		FileWriter fw=new FileWriter(file,true);
 		FileReader fr=new FileReader(file);

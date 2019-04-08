@@ -1,9 +1,9 @@
 package com.bluelxians.quiz.view;
 import com.bluelxians.quiz.controller.*;
 import java.util.*;
-/*
-@Sarath Kumar S
-*/
+/**
+*@author Sarath Kumar S
+**/
 public class UserView
 {
 	int quizChoice;
