@@ -1,6 +1,6 @@
 package com.bluelxians.quiz.view;
 /**
-*@author Pavana N P
+*@author Sarath Kumar S
 **/
 import java.util.Scanner;
 public class QuizProgramView

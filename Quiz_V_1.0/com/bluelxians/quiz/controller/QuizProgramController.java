@@ -1,4 +1,4 @@
-package com.bluelxians.quiz.view;
+package com.bluelxians.quiz.controller;
 import java.util.*;
 import java.io.*;
 import com.bluelxians.quiz.model.*;
@@ -9,13 +9,13 @@ import com.bluelxians.quiz.controller.ManagerController;
 public class QuizProgramController
 {
 	ArrayList <Quiz> quizes = new ArrayList <Quiz> ();
-	Scanner scan=new Scanner();
+	Scanner scan=new Scanner(System.in);
 	ManagerController managerC=new ManagerController();
 	
-	public void sessionView(String session)
+	public void sessionView()throws Exception
 	{	
 		String choice;
-		this.managerC.readFromFile(quizes,session);
+		this.managerC.readFromFile(quizes);
 
 		for(int i=0;i<quizes.size();i++)
 					{

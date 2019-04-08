@@ -128,9 +128,14 @@ public class ManagerView
 			while(scan.nextInt()==1){
 			System.out.print("Changed question:");
 			String q=br.readLine();
+			System.out.print("Changed options:");
+			String o1=scan.next();
+			String o2=scan.next();
+			String o3=scan.next();
+			String o4=scan.next();
 			System.out.print("Changed answer:");
 			String a=scan.next();
-			managerC.updateQuizAnswer(quizes,quesNo,a);
+			managerC.updateQuiz(quizes,quesNo,q,o1,o2,o3,o4,a);
 			}
 			managerC.storeInFile(quizes);
 			quizes.clear();

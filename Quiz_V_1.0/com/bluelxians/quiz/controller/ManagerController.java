@@ -25,7 +25,7 @@ public class ManagerController
 		}
 		
 	}
-	public void updateQuizQuestion(ArrayList <Quiz> quizes,String quesNo,String q)throws Exception
+	public void updateQuiz(ArrayList <Quiz> quizes,String quesNo,String q,String o1,String o2,String o3,String o4,String a)throws Exception
 	{
 		for(int i=0;i<quizes.size();i++)
 		{
@@ -33,17 +33,11 @@ public class ManagerController
 			if(Integer.parseInt(quesNo)==j)
 			{
 				quizes.get(i).setQuestion(q);
-			}
-		}
-	}
-	public void updateQuizAnswer(ArrayList <Quiz> quizes,String quesNo,String a)throws Exception
-	{
-		for(int i=0;i<quizes.size();i++)
-		{
-			int j=i+1;
-			if(Integer.parseInt(quesNo)==j)
-			{
 				quizes.get(i).setAnswer(a);
+				quizes.get(i).setOptionA(o1);
+				quizes.get(i).setOptionB(o2);
+				quizes.get(i).setOptionC(o3);
+				quizes.get(i).setOptionD(o4);
 			}
 		}
 	}
@@ -58,7 +52,7 @@ public class ManagerController
 					}
 					bw.close();
 	}
-	public void readFromFile(ArrayList <Quiz> quizes,String session)throws Exception
+	public void readFromFile(ArrayList <Quiz> quizes)throws Exception
 	{
 
 		File file=new File("javaquiz.csv");
