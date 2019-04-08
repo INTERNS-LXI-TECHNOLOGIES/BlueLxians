@@ -59,10 +59,10 @@ public class ManagerController
 		FileWriter fw=new FileWriter(file,true);
 		FileReader fr=new FileReader(file);
 		BufferedReader br=new BufferedReader(fr);
-				int k=0;	
-				String data;	
-				while((data=br.readLine())!=null)
-				{
+		int k=0;	
+		String data;	
+		while((data=br.readLine())!=null)
+			{
 				Quiz quiz=new Quiz();
 				String item[]=data.split(",");
 				quiz.setQuestion(item[k]);
@@ -72,12 +72,8 @@ public class ManagerController
 				quiz.setOptionD(item[k+4]);
 				quiz.setAnswer(item[k+5]);
 				quizes.add(quiz);
-				}
-				br.close();
-				for(int i=0;i<quizes.size();i++)
-					{
-						System.out.println((i+1)+"."+quizes.get(i).getQuestion()+"?\na."+quizes.get(i).getOptionA()+"\nb."+quizes.get(i).getOptionB()+"\nc."+quizes.get(i).getOptionC()+"\nd."+quizes.get(i).getOptionD()+"\nAns:"+quizes.get(i).getAnswer());
-					}
+			}
+		br.close();
 	}
 		
 	public void managerOptions(ArrayList <Quiz> quizes,Quiz quiz)throws Exception

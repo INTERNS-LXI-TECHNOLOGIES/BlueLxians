@@ -100,6 +100,7 @@ public class ManagerView
 		managerC.addQuiz(quizes,quiz);
 		System.out.println("To add questions again press 1");
 		}while(scan.nextInt()==1);
+
 		managerC.storeInFile(quizes);
 		quizes.clear();
 		managerC.readFromFile(quizes);
@@ -115,6 +116,7 @@ public class ManagerView
 				managerC.deleteQuiz(quesNo,quizes);
 				System.out.println("To delete questions again press 1");
 			}while(scan.nextInt()==1);
+
 				managerC.storeInFile(quizes);
 				quizes.clear();
 				managerC.readFromFile(quizes);
@@ -125,17 +127,18 @@ public class ManagerView
 			System.out.print("which one you want to edit:");
 			String quesNo=scan.next();
 			System.out.println("To edit question  press 1");
-			while(scan.nextInt()==1){
-			System.out.print("Changed question:");
-			String q=br.readLine();
-			System.out.print("Changed options:");
-			String o1=scan.next();
-			String o2=scan.next();
-			String o3=scan.next();
-			String o4=scan.next();
-			System.out.print("Changed answer:");
-			String a=scan.next();
-			managerC.updateQuiz(quizes,quesNo,q,o1,o2,o3,o4,a);
+			while(scan.nextInt()==1)
+			{
+				System.out.print("Changed question:");
+				String q=br.readLine();
+				System.out.print("Changed options:");
+				String o1=scan.next();
+				String o2=scan.next();
+				String o3=scan.next();
+				String o4=scan.next();
+				System.out.print("Changed answer:");
+				String a=scan.next();
+				managerC.updateQuiz(quizes,quesNo,q,o1,o2,o3,o4,a);
 			}
 			managerC.storeInFile(quizes);
 			quizes.clear();

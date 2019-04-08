@@ -7,22 +7,12 @@ import java.util.*;
 */
 public class UserController
 {
+	Scanner scan= new Scanner(System.in);
 	QuizProgramController quizProgramC=new QuizProgramController();
-	/*QuizSessionView quizSessionView=new QuizSessionView();
-	public void quizChoice()
+	public void quizChoice()throws Exception
 	{
 		UserView userV=new UserView();
-		int choice=userV.logedUser();
-		switch(choice)
-		{
-			case 1:quizProgramC.sessionView("Java");
-					break;
-			case 2:quizProgramC.sessionView("C Programme");
-					break;
-			case 3:quizProgramC.sessionView("CPP");
-					break;
-			default:System.out.println("Invalid selection");
-					break;
-		}
-	}*/
+		userV.logedUser();
+	}
+
 }
