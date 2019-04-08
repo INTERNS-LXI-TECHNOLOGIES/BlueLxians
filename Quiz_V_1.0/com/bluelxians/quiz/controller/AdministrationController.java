@@ -13,18 +13,24 @@ public class AdministrationController
 	ManagerController managerC=new ManagerController();
 	UserController userC=new UserController();
     ArrayList <Quiz> quizes=new ArrayList <Quiz> ();
-	
+	Quiz quiz;
 	public void loginValidation(String userName,String password)throws Exception
 	{
-	Properties properties=new Properties();
-	FileReader f = new FileReader("prop.properties");
-	properties.load(f);
-     if(userName.equals((properties.getProperty("managerUserName"))))
+	FileWriter w=new FileWriter("prop.properties");
+	FileReader r= new FileReader("prop.properties");
+	Properties p=new Properties();
+	p.setProperty("managerUserName","manager");
+	p.setProperty("managerPassword","manager");
+	p.setProperty("userUserName","user");
+	p.setProperty("userPassword","user");
+	p.store(w,"java");
+	p.load(r);
+     if(userName.equals(p.getProperty("managerUserName")))
 	   {
-		   if(password.equals((properties.getProperty("managerPassword"))))
+		   if(password.equals(p.getProperty("managerPassword")))
 		   {
 
-			   managerC.managerOptions(quizes);
+			   managerC.managerOptions(quizes,quiz);
 
 		   }
 		   else
@@ -32,11 +38,11 @@ public class AdministrationController
 			   System.out.println("Password incorrect");
 		   }
 	   }
-	 else if(userName.equals(properties.getProperty("userName")))
+	 else if(userName.equals(p.getProperty("userUserName")))
 	   {
-			if(password.equals(properties.getProperty("password")))
+			if(password.equals(p.getProperty("userPassword")))
 			{
-				userC.quizChoice();
+				//userC.quizChoice();
 			}
 			else
 			{

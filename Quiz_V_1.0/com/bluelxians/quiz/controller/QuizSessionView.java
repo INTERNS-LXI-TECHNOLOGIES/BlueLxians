@@ -1,5 +1,4 @@
-package com.bluelxians.quiz.view;
-import java.util.*;
+/*import java.util.*;
 import java.io.*;
 import com.bluelxians.quiz.model.*;
 import com.bluelxians.quiz.controller.ManagerController;
@@ -29,9 +28,4 @@ import com.bluelxians.quiz.controller.ManagerController;
 		
 	}
 
-<<<<<<< HEAD
-}
-=======
-		}
 }*/
->>>>>>> 49745b1e933ca29dcf4c2abcb3cd6d038ec2d56a

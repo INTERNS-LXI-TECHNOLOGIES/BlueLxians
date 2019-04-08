@@ -7,7 +7,11 @@ import java.util.*;
 */
 public class UserController
 {
+<<<<<<< HEAD
 	QuizProgramController quizProgramC=new QuizProgramController();
+=======
+	/*QuizSessionView quizSessionView=new QuizSessionView();
+>>>>>>> 49745b1e933ca29dcf4c2abcb3cd6d038ec2d56a
 	public void quizChoice()
 	{
 		UserView userV=new UserView();
@@ -23,5 +27,5 @@ public class UserController
 			default:System.out.println("Invalid selection");
 					break;
 		}
-	}
+	}*/
 }
