@@ -6,7 +6,7 @@ import java.util.*;
 */
 public class UserController
 {
-	QuizSessionView quizSessionView=new QuizSessionView();
+	/*QuizSessionView quizSessionView=new QuizSessionView();
 	public void quizChoice()
 	{
 		UserView userV=new UserView();
@@ -22,5 +22,5 @@ public class UserController
 			default:System.out.println("Invalid selection");
 					break;
 		}
-	}
+	}*/
 }

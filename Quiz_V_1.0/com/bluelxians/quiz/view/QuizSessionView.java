@@ -5,7 +5,7 @@ import com.bluelxians.quiz.model.*;
 /*
 @Sarath Kumar S
 */
-public class QuizSessionView
+/*public class QuizSessionView
 {
 	public void sessionView(String session)
 	{	
@@ -41,4 +41,4 @@ public class QuizSessionView
 					}
 
 		}
-}
+}*/
