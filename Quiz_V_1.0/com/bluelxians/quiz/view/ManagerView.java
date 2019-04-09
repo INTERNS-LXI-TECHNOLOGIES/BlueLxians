@@ -12,10 +12,13 @@ public class ManagerView
 	Scanner scan=new Scanner(System.in);
 	InputStreamReader r=new InputStreamReader(System.in);  
 	BufferedReader br=new BufferedReader(r); 
-	ManagerController managerC;
+	ManagerController managerC=new ManagerController();
 	public void managerOperations(ArrayList <Quiz> quizes,Quiz quiz)throws Exception
 	{
-		managerC=new ManagerController();
+		System.out.println("\n1.Create a session\n2.Delete a session\n");
+		switch(scan.nextInt())
+		{
+		case 1:
 		do
 		{
 		System.out.println("Operations\n1.Add\n2.Delete\n3.Update\n");
@@ -114,6 +117,10 @@ public class ManagerView
 		
 		System.out.println("Again do any operation press 1");
 		}while(scan.nextInt()==1);
+		break;
+		case 2:
+		break;
+		}
 	}
 	public void add(ArrayList <Quiz> quizes,Quiz quiz)throws Exception
 	{
