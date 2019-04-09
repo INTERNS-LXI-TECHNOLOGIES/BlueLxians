@@ -4,22 +4,12 @@ package com.bluelxians.quiz.model;
 */ 
 public class Quiz
 {
-   
-    private String session;
     private String question;
     private String optionA;
     private String optionB;	
 	private String optionC;	
 	private String optionD;	
     private String answer;
-	public void setSession(String session)
-	{
-		this.session=session;
-	}
-	public String getSession()
-	{
-		return session;
-	}
 	public void setQuestion(String question)
     {
 		this.question=question;

@@ -10,23 +10,22 @@ public class QuizProgramController
 {
 	ArrayList <Quiz> quizes = new ArrayList <Quiz> ();
 	Scanner scan=new Scanner(System.in);
+	
 	ManagerController managerC=new ManagerController();
 	
-	public void sessionView()throws Exception
-	{	
-		String choice;
-		this.managerC.readFromFile(quizes);
-
+	public int checking(String choice)throws Exception
+	{
+		int score=0;
+		managerC.readFromJavaFile(quizes);
+		managerC.readFromCFile(quizes);
+		managerC.readFromCppFile(quizes);
 		for(int i=0;i<quizes.size();i++)
-					{
-						
-							System.out.println("i+1. "+quizes.get(i).getQuestion()+"\n"+"a)."+quizes.get(i).getOptionA()+"\n"+"b)."+quizes.get(i).getOptionB()+"\n"+"c)."+quizes.get(i).getOptionC()+"\n"+"d)."+quizes.get(i).getOptionD());
-							System.out.print("Enter your option:");
-							choice=scan.next();
-						
-
-					}
-		
+		{
+			if(choice.equals(quizes.get(i).getAnswer()))
+				{
+					score=score+1;	
+				}
+		}return score;
 	}
 
 }
