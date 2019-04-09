@@ -9,13 +9,34 @@ public class AdministrationView
 	Scanner scan=new Scanner(System.in);
      public void login()throws Exception
      	{
-		 
+		 do
+		 {
 		    AdministrationController administrationC = new AdministrationController();
-	     	System.out.println("Login");
-		 	System.out.print("User name:");
-		 	String userName=scan.next();
-         	System.out.print("Password:");
-         	String password=scan.next();
-      	    administrationC.loginValidation(userName,password);
-      	}	  
+	     	System.out.println("1.Login");
+			System.out.println("2.Register");
+			switch(scan.nextInt())
+			{
+				case 1:
+				System.out.print("User name:");
+				String userName=scan.next();
+				System.out.print("Password:");
+				String password=scan.next();
+				administrationC.loginValidation(userName,password);
+				break;
+				case 2:
+				System.out.print("User name:");
+				userName=scan.next();
+				System.out.print("Password:");
+				password=scan.next();
+				administrationC.registrationDetails(userName,password);
+				System.out.println("registration successful");
+				break;
+				default :
+					System.out.println("wrong choice");
+				break;
+      	    }
+         System.out.println("previous menu press 1");
+         }
+         while(scan.nextInt()==1);		 
+      }
 }
