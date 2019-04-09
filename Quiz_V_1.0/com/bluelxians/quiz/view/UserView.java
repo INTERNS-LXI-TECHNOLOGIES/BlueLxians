@@ -15,6 +15,7 @@ public class UserView
 	String choice;
 	public void logedUser()throws Exception
 	{
+		
 		System.out.println("Welcome To Quiz Contest");
 		System.out.println("------------------------");
 		do{
@@ -50,6 +51,4 @@ public class UserView
 		int score=quizProgramC.checking(choice);
 		System.out.println("Your Score is"+score);
 	}
-
-
 }
