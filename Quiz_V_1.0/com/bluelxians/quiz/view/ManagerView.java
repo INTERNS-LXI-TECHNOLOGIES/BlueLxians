@@ -126,23 +126,23 @@ public class ManagerView
 	{
 		System.out.println("Quiz");
 		quiz=new Quiz();
-		do
-		{
+		//do
+		//{
 		System.out.print("Question:");
 		quiz.setQuestion(br.readLine());
 		System.out.print("Option a:");
-		quiz.setOptionA(scan.next());
+		quiz.setOptionA(br.readLine());
 		System.out.print("Option b:");
-		quiz.setOptionB(scan.next());
+		quiz.setOptionB(br.readLine());
 		System.out.print("Option c:");
-		quiz.setOptionC(scan.next());
+		quiz.setOptionC(br.readLine());
 		System.out.print("Option d:");
-		quiz.setOptionD(scan.next());
+		quiz.setOptionD(br.readLine());
 		System.out.print("Answer:");
-		quiz.setAnswer(scan.next());
+		quiz.setAnswer(br.readLine());
 		managerC.addQuiz(quizes,quiz);
-		System.out.println("To add questions again press 1");
-		}while(scan.nextInt()==1);
+		//System.out.println("To add questions again press 1");
+		//}while(scan.nextInt()==1);
 	}
 	public void delete(ArrayList <Quiz> quizes)throws Exception
 	{
@@ -164,12 +164,12 @@ public class ManagerView
 				System.out.print("Changed question:");
 				String q=br.readLine();
 				System.out.print("Changed options:");
-				String o1=scan.next();
-				String o2=scan.next();
-				String o3=scan.next();
-				String o4=scan.next();
+				String o1=br.readLine();
+				String o2=br.readLine();
+				String o3=br.readLine();
+				String o4=br.readLine();
 				System.out.print("Changed answer:");
-				String a=scan.next();
+				String a=br.readLine();
 				managerC.updateQuiz(quizes,quesNo,q,o1,o2,o3,o4,a);
 			}
 	}		
