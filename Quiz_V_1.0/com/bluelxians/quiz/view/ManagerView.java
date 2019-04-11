@@ -5,20 +5,30 @@ import java.util.ArrayList;
 import java.io.*;
 import java.util.Scanner;
 /**
+*<h1>View class of manager </h1>
+*This class is a view part for manager and getting inputs from manager
 *@author Pavana N P
-**/
+*@version 1.0
+*/
 public class ManagerView
 {
 	Scanner scan=new Scanner(System.in);
 	InputStreamReader r=new InputStreamReader(System.in);  
 	BufferedReader br=new BufferedReader(r); 
 	ManagerController managerC=new ManagerController();
+	/**
+	*This is a method used for manager operations
+	*@param quizes used to store multiple quizes 
+	*@param quiz is used to store single quiz
+	*@exception Io Exception 
+	*/
 	public void managerOperations(ArrayList <Quiz> quizes,Quiz quiz)throws Exception
 	{
 		System.out.println("\n1.Create a session\n2.Delete a session\n");
 		switch(scan.nextInt())
 		{
 		case 1:
+		
 		do
 		{
 		System.out.println("Operations\n1.Add\n2.Delete\n3.Update\n");
@@ -122,12 +132,17 @@ public class ManagerView
 		break;
 		}
 	}
+	/**
+	*This method is to add quiz to quizes arraylist 
+	*and to read datas for adding
+	*@param quizes used to store multiple quizes 
+	*@param quiz is used to store single quiz
+	*@exception Io Exception 
+	*/
 	public void add(ArrayList <Quiz> quizes,Quiz quiz)throws Exception
 	{
 		System.out.println("Quiz");
 		quiz=new Quiz();
-		//do
-		//{
 		System.out.print("Question:");
 		quiz.setQuestion(br.readLine());
 		System.out.print("Option a:");
@@ -141,9 +156,12 @@ public class ManagerView
 		System.out.print("Answer:");
 		quiz.setAnswer(br.readLine());
 		managerC.addQuiz(quizes,quiz);
-		//System.out.println("To add questions again press 1");
-		//}while(scan.nextInt()==1);
 	}
+	/**
+	*This method is used to delete quizes from the arraylist quizes
+	*@param quizes contain multiple quiz
+	*@exception Io Exception 
+	*/
 	public void delete(ArrayList <Quiz> quizes)throws Exception
 	{
 		do
@@ -154,6 +172,11 @@ public class ManagerView
 				System.out.println("To delete questions again press 1");
 			}while(scan.nextInt()==1);
 	}
+	/**
+	*This method to edit questions,options and answers in the quizes 
+	*@param quizes contain multiple quiz
+	*@exception Io Exception 
+	*/
 	public void update(ArrayList <Quiz> quizes)throws Exception
 	{
 			System.out.print("which one you want to edit:");

@@ -9,8 +9,6 @@ public class AdministrationView
 	Scanner scan=new Scanner(System.in);
      public void login()throws Exception
      	{
-			//String[] userNames=new String[50];
-			//String[] passwords=new String[50];
 		 do
 		 {
 		    AdministrationController administrationC = new AdministrationController();
