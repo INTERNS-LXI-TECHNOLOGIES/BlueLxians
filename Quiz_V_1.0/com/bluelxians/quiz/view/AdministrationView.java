@@ -16,6 +16,7 @@ public class AdministrationView
 		    AdministrationController administrationC = new AdministrationController();
 	     	System.out.println("1.Login");
 			System.out.println("2.Register");
+			System.out.println("3.exit");
 			switch(scan.nextInt())
 			{
 				case 1:
@@ -31,7 +32,8 @@ public class AdministrationView
 				System.out.print("Password:");
 				password=scan.next();
 				administrationC.registrationDetails(emailId,password);
-				//System.out.println("registration successful");
+				break;
+				case 3:System.out.println("Thank you");
 				break;
 				default :
 					System.out.println("wrong choice");

@@ -79,4 +79,4 @@ public void registrationDetails(String emailId,String password)throws Exception
 		}
 		w.close();
 }
-}
+} 
