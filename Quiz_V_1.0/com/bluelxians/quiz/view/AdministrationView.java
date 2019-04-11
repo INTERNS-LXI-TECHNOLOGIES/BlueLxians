@@ -17,19 +17,19 @@ public class AdministrationView
 			switch(scan.nextInt())
 			{
 				case 1:
-				System.out.print("User name:");
-				String userName=scan.next();
+				System.out.print("EmailId:");
+				String emailId=scan.next();
 				System.out.print("Password:");
 				String password=scan.next();
-				administrationC.loginValidation(userName,password);
+				administrationC.loginValidation(emailId,password);
 				break;
 				case 2:
-				System.out.print("User name:");
-				userName=scan.next();
+				System.out.print("EmailId:");
+				emailId=scan.next();
 				System.out.print("Password:");
 				password=scan.next();
-				administrationC.registrationDetails(userName,password);
-				System.out.println("registration successful");
+				administrationC.registrationDetails(emailId,password);
+				//System.out.println("registration successful");
 				break;
 				default :
 					System.out.println("wrong choice");
