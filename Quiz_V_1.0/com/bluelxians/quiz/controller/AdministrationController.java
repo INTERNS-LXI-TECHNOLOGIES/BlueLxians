@@ -52,7 +52,7 @@ public class AdministrationController
 	}
 public void registrationDetails(String userName,String password)throws Exception
 {
-		FileWriter w=new FileWriter("prop.properties");
+		FileWriter w=new FileWriter("prop.properties",true);
 		FileReader r= new FileReader("prop.properties");
 		Properties p=new Properties();
 	    p.setProperty("managerUserName","manager");
