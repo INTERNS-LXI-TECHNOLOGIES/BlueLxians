@@ -11,7 +11,11 @@ import java.io.*;
 */
 public class ManagerController
 {
-	ManagerView managerV;
+	ManagerView managerV=new ManagerView();
+	/*public void createSession(String sessionName)
+	{
+		
+	}*/
 	/**
 	*This method used to add quiz to the arraylist quizes
 	*@param quizes used to store multiple quizes 
@@ -178,8 +182,6 @@ public class ManagerController
 	*/	
 	public void managerOptions(ArrayList <Quiz> quizes,Quiz quiz)throws Exception
 	{
-		managerV=new ManagerView();
 		managerV.managerOperations(quizes,quiz); 
-		
 	}
 }

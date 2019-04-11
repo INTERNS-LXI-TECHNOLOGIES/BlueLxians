@@ -28,7 +28,9 @@ public class ManagerView
 		switch(scan.nextInt())
 		{
 		case 1:
-		
+		System.out.println("Enter the quiz session :");
+		String sessionName=scan.next();
+		//managerC.createSession(sessionName);
 		do
 		{
 		System.out.println("Operations\n1.Add\n2.Delete\n3.Update\n");
