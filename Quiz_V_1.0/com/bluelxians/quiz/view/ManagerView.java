@@ -12,10 +12,13 @@ public class ManagerView
 	Scanner scan=new Scanner(System.in);
 	InputStreamReader r=new InputStreamReader(System.in);  
 	BufferedReader br=new BufferedReader(r); 
-	ManagerController managerC;
+	ManagerController managerC=new ManagerController();
 	public void managerOperations(ArrayList <Quiz> quizes,Quiz quiz)throws Exception
 	{
-		managerC=new ManagerController();
+		System.out.println("\n1.Create a session\n2.Delete a session\n");
+		switch(scan.nextInt())
+		{
+		case 1:
 		do
 		{
 		System.out.println("Operations\n1.Add\n2.Delete\n3.Update\n");
@@ -114,28 +117,32 @@ public class ManagerView
 		
 		System.out.println("Again do any operation press 1");
 		}while(scan.nextInt()==1);
+		break;
+		case 2:
+		break;
+		}
 	}
 	public void add(ArrayList <Quiz> quizes,Quiz quiz)throws Exception
 	{
 		System.out.println("Quiz");
 		quiz=new Quiz();
-		do
-		{
+		//do
+		//{
 		System.out.print("Question:");
 		quiz.setQuestion(br.readLine());
 		System.out.print("Option a:");
-		quiz.setOptionA(scan.next());
+		quiz.setOptionA(br.readLine());
 		System.out.print("Option b:");
-		quiz.setOptionB(scan.next());
+		quiz.setOptionB(br.readLine());
 		System.out.print("Option c:");
-		quiz.setOptionC(scan.next());
+		quiz.setOptionC(br.readLine());
 		System.out.print("Option d:");
-		quiz.setOptionD(scan.next());
+		quiz.setOptionD(br.readLine());
 		System.out.print("Answer:");
-		quiz.setAnswer(scan.next());
+		quiz.setAnswer(br.readLine());
 		managerC.addQuiz(quizes,quiz);
-		System.out.println("To add questions again press 1");
-		}while(scan.nextInt()==1);
+		//System.out.println("To add questions again press 1");
+		//}while(scan.nextInt()==1);
 	}
 	public void delete(ArrayList <Quiz> quizes)throws Exception
 	{
@@ -157,12 +164,12 @@ public class ManagerView
 				System.out.print("Changed question:");
 				String q=br.readLine();
 				System.out.print("Changed options:");
-				String o1=scan.next();
-				String o2=scan.next();
-				String o3=scan.next();
-				String o4=scan.next();
+				String o1=br.readLine();
+				String o2=br.readLine();
+				String o3=br.readLine();
+				String o4=br.readLine();
 				System.out.print("Changed answer:");
-				String a=scan.next();
+				String a=br.readLine();
 				managerC.updateQuiz(quizes,quesNo,q,o1,o2,o3,o4,a);
 			}
 	}		
